@@ -51,8 +51,7 @@ void Simulator::step() {
 	string actionLog;
 	for (auto agentPair: agents) {
 		auto agent = agentPair.second;
-		log(3, vformat("Agent %d is perceiving the environment...", agent->id));
-		log(3, vformat("Agent %d is deciding...", agent->id));
+		log(3, fstring("Agent %d is perceiving the environment and deciding...", agent->id));
 		switch (agent->act(environment->percept(agent))) {
 			case TrivialAction::left:
 				actionLog = "went left";
@@ -77,7 +76,7 @@ void Simulator::step() {
 				--aliveAgentsCount;
 				break;
 		}
-		log(3, vformat("Agent %d %s", agent->id, actionLog.c_str()));
+		log(3, fstring("Agent %d %s", agent->id, actionLog.c_str()));
 	}
 }
 
@@ -121,7 +120,7 @@ void Simulator::run(unsigned int runs, unsigned int steps) {
 	log(0, "Starting Simulation...");
 	unsigned int runCount = 0, stepCount;
 	while (runCount++ < runs) {
-		log(1, vformat("Simulation run No. %d...", runCount));
+		log(1, fstring("Simulation run No. %d...", runCount));
 		log(2, "Initializing simulation...");
 		initialize();
 		log(2, "Running simulation...");
@@ -131,9 +130,9 @@ void Simulator::run(unsigned int runs, unsigned int steps) {
 				log(2, "Simulation ended sooner because no agents are alive anymore!");
 				return;
 			}
-			log(2, vformat("Time step (%d):", stepCount));
+			log(2, fstring("Time step (%d):", stepCount));
 			step();
 		}
-		log(0, "Simulation ended");
+		log(1, "Simulation ended");
 	}
 }

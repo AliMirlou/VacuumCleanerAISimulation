@@ -10,7 +10,7 @@
 
 using namespace std;
 
-string vformat(const string zcFormat, ...) {
+string fstring(const string zcFormat, ...) {
 	va_list vaArgs;
 	va_start(vaArgs, zcFormat);
 	char *fp = nullptr;

@@ -11,7 +11,7 @@
 
 using namespace std;
 
-extern string vformat(string zcFormat, ...);
+extern string fstring(string zcFormat, ...);
 
 extern function<void(int, string)> Logger(string name_space);
 
