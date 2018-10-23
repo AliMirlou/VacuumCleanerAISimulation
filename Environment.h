@@ -9,6 +9,7 @@
 #include "Agent.h"
 
 class Environment {
+	bool dynamic;
 public:
 	int length, width;
 	Square ***world;
@@ -24,14 +25,14 @@ public:
 	* @param[in] length
 	* @param[in] width
 	*/
-	Environment(int length, int width);
+	Environment(int length, int width, bool dynamic = false);
 
 	/**
 	 * Initialize environment randomly with the given seed.
 	 *
 	 * @param[in] seed
 	 */
-	explicit Environment(long seed);
+	explicit Environment(unsigned seed, bool dynamic = false);
 
 	/**
 	 * Checks that the coordinates don't fall off the world.

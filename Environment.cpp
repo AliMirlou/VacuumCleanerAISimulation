@@ -14,13 +14,17 @@ void Environment::initializeWorld() {
 	}
 }
 
-Environment::Environment(int length, int width) {
+Environment::Environment(int length, int width, bool dynamic) {
 	this->length = length;
 	this->width = width;
+	this->dynamic = dynamic;
 }
 
-Environment::Environment(long seed) {
-
+Environment::Environment(unsigned seed, bool dynamic) {
+	srand(seed);
+	this->length = rand();
+	this->width = rand();
+	this->dynamic = dynamic;
 }
 
 bool Environment::isValidPosition(int longitude, int latitude) {
