@@ -21,3 +21,10 @@ Again open a terminal in project's root directory and run commands:
 ```console
 $ g++ <Names of all .cpp and .h files in the project separated by spaces>
 ```
+
+# Collaborators
+|       Mohammad Mahdi Balouchi       |
+| :---------------------------------: |
+| [![balouchi]](http://github.com/mmehdibalouchi) |
+
+[balouchi]: https://avatars2.githubusercontent.com/u/12944336?s=100&v=4
